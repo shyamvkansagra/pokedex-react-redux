@@ -1,0 +1,77 @@
+.container {
+	width: 70%;
+}
+
+.heading {
+	background-color: #fc9;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 1.25em;
+	padding: 5px 25px;
+	color: darkred;
+	margin-bottom: 1vh;
+}
+
+#app {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.searchBox input {
+	width: -webkit-fill-available;
+	margin: 2vh 0 2vh 0;
+	border-radius: 2%;
+	padding: 9px;
+	font-size: medium;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-family: Comic Sans MS;
+}
+
+th,
+td {
+	text-align: center;
+	padding: 8px;
+}
+
+.show-pokemon td {
+	padding-top: 18px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+th {
+	background-color: darkred;
+	color: white;
+}
+
+.catchButton {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4caf50;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 4px #999;
+}
+
+.catchButton:hover {
+	background-color: #3e8e41;
+}
+
+.catchButton:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
