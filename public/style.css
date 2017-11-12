@@ -40,6 +40,7 @@ td {
 
 .show-pokemon td {
 	padding-top: 18px;
+	text-decoration: none;
 }
 
 tr:nth-child(even) {
@@ -74,4 +75,17 @@ th {
 	background-color: #3e8e41;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+}
+
+.pokemon-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 5px solid darkred;
+	background-color: #eee;
+}
+
+.pokemon-card h1 {
+	font-family: Comic Sans MS;
+	color: darkred;
 }

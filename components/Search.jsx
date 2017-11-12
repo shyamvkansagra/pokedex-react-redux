@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
+// @flow
+
+import React from 'react';
+import { connect } from 'react-redux';
 import AllPokemonTable from './AllPokemonTable';
+import { setSearchTerm } from './actionCreators';
 
-class Search extends Component {
-	state = {
-		searchTerm: ''
-	};
+const Search = (props: { searchTerm: string, handleSearchTermChange: Function }) => (
+	<div className="searchBox">
+		<input
+			type="text"
+			placeholder="Search Pokemon"
+			onChange={props.handleSearchTermChange}
+			value={props.searchTerm}
+		/>
+		<AllPokemonTable />
+	</div>
+);
 
-	handleSearchTermChange = event => {
-		this.setState({ searchTerm: event.target.value });
-	};
-
-	render() {
-		return (
-			<div className="searchBox">
-				<input
-					type="text"
-					placeholder="Search Pokemon"
-					onChange={this.handleSearchTermChange}
-					value={this.state.searchTerm}
-				/>
-				<AllPokemonTable searchTerm={this.state.searchTerm} />
-			</div>
-		);
+const mapStateToProps = state => ({ searchTerm: state.searchTerm });
+const mapDispatchToProps = dispatch => ({
+	handleSearchTermChange(event) {
+		dispatch(setSearchTerm(event.target.value));
 	}
-}
+});
 
-export default Search;
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
